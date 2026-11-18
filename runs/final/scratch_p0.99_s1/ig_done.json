@@ -1,0 +1,13 @@
+{
+ "steps": 64,
+ "blur_sigma": 16,
+ "n1000": 1000,
+ "sec": {
+  "gray64": 39.2,
+  "blur64": 40.8,
+  "gray128": 15.6,
+  "sizes": 39.1
+ },
+ "conv_precision": "fp32 tensors, TF32 tensor-core convolutions (cudnn.allow_tf32=True)",
+ "finished": "2026-10-31 09:59:04"
+}

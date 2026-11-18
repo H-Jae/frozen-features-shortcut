@@ -1,0 +1,32 @@
+{
+ "n": 10000,
+ "variants": [
+  "match",
+  "wrong",
+  "none",
+  "occ_center",
+  "occ_tl",
+  "match_tl",
+  "wrong_tl",
+  "match_tr",
+  "wrong_tr",
+  "match_bl",
+  "wrong_bl",
+  "match_s12",
+  "wrong_s12",
+  "match_s48",
+  "wrong_s48",
+  "none_blur4",
+  "match_blur4",
+  "wrong_blur4",
+  "none_blur8",
+  "match_blur8",
+  "wrong_blur8",
+  "none_blur16",
+  "match_blur16",
+  "wrong_blur16"
+ ],
+ "conv_precision": "IEEE fp32 (cudnn.allow_tf32=False)",
+ "sec": 104.4,
+ "finished": "2026-11-02 19:35:32"
+}

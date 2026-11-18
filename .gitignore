@@ -1,0 +1,13 @@
+# CIFAR-10 files (download again from the URL in the README)
+data/
+
+# Checkpoints (about 43 MB each; retraining reproduces them)
+*.pt
+*.pth
+
+# Written reports and the proposal are kept out of the repository
+docs/
+
+__pycache__/
+*.pyc
+.venv/

@@ -1,0 +1,16 @@
+{
+ "strategy": "ft",
+ "p": 0.9,
+ "seed": 2,
+ "lr": 0.03,
+ "wd": 0.0005,
+ "epochs": 10,
+ "batch": 256,
+ "optimizer": "SGD(momentum=0.9, nesterov=True)",
+ "schedule": "1-epoch linear warmup + cosine to 0",
+ "precision": "bf16 autocast",
+ "limit": null,
+ "started": "2026-10-31 08:33:12",
+ "torch": "2.14.1+cu130",
+ "gpu": "NVIDIA GeForce RTX 5070"
+}

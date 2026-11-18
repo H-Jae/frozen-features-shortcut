@@ -1,0 +1,167 @@
+[2026-10-31 04:20:05] === stage smoke start
+[2026-10-31 04:20:05] smoke train lp_p0.99_s0
+[2026-10-31 04:20:40] smoke ok lp_p0.99_s0
+[2026-10-31 04:20:40] smoke train ft_p0.99_s0
+[2026-10-31 04:20:51] smoke ok ft_p0.99_s0
+[2026-10-31 04:20:51] smoke train scratch_p0.99_s0
+[2026-10-31 04:21:01] smoke ok scratch_p0.99_s0
+[2026-10-31 04:21:01] === stage smoke end
+[2026-10-31 04:22:33] === stage bench start
+[2026-10-31 04:22:53] bench lp: 4876 img/s train -> 45k epoch 9s
+[2026-10-31 04:23:04] bench ft: 2226 img/s train -> 45k epoch 20s
+[2026-10-31 04:23:14] bench scratch: 2226 img/s train -> 45k epoch 20s
+[2026-10-31 04:23:31] bench eval: 17.4s for 2000 imgs x 24 variants
+[2026-10-31 04:23:36] bench ig (20 imgs gray64+blur64, 4 gray128, 10x2 sizes): 4.9s
+[2026-10-31 04:23:36] === stage bench end
+[2026-10-31 04:24:36] === stage tune start
+[2026-10-31 04:24:36] tune lp_p0.10_s100_lr0.001_wd0.0001
+[2026-10-31 04:26:23]   -> best_val_acc=0.8488 at ep15 (106.8s)
+[2026-10-31 04:26:23] tune lp_p0.10_s100_lr0.001_wd0.0005
+[2026-10-31 04:28:08]   -> best_val_acc=0.8486 at ep13 (104.3s)
+[2026-10-31 04:28:08] tune lp_p0.10_s100_lr0.003_wd0.0001
+[2026-10-31 04:29:52]   -> best_val_acc=0.8648 at ep14 (104.3s)
+[2026-10-31 04:29:52] tune lp_p0.10_s100_lr0.003_wd0.0005
+[2026-10-31 04:31:37]   -> best_val_acc=0.8646 at ep14 (104.3s)
+[2026-10-31 04:31:37] tune lp_p0.10_s100_lr0.01_wd0.0001
+[2026-10-31 04:33:21]   -> best_val_acc=0.8736 at ep13 (104.4s)
+[2026-10-31 04:33:21] tune lp_p0.10_s100_lr0.01_wd0.0005
+[2026-10-31 04:35:06]   -> best_val_acc=0.8736 at ep13 (104.3s)
+[2026-10-31 04:35:06] tune ft_p0.10_s100_lr0.003_wd0.0001
+[2026-10-31 04:38:04]   -> best_val_acc=0.9522 at ep9 (178.7s)
+[2026-10-31 04:38:04] tune ft_p0.10_s100_lr0.003_wd0.0005
+[2026-10-31 04:41:02]   -> best_val_acc=0.9530 at ep9 (177.6s)
+[2026-10-31 04:41:02] tune ft_p0.10_s100_lr0.01_wd0.0001
+[2026-10-31 04:44:00]   -> best_val_acc=0.9626 at ep9 (177.7s)
+[2026-10-31 04:44:00] tune ft_p0.10_s100_lr0.01_wd0.0005
+[2026-10-31 04:46:58]   -> best_val_acc=0.9624 at ep8 (177.7s)
+[2026-10-31 04:46:58] tune ft_p0.10_s100_lr0.03_wd0.0001
+[2026-10-31 04:49:55]   -> best_val_acc=0.9644 at ep10 (177.7s)
+[2026-10-31 04:49:55] tune ft_p0.10_s100_lr0.03_wd0.0005
+[2026-10-31 04:55:06]   -> best_val_acc=0.9678 at ep10 (310.2s)
+[2026-10-31 04:55:06] tune scratch_p0.10_s100_lr0.05_wd0.0001
+[2026-10-31 05:10:50]   -> best_val_acc=0.9278 at ep40 (944.0s)
+[2026-10-31 05:10:50] tune scratch_p0.10_s100_lr0.05_wd0.0005
+[2026-10-31 05:22:41]   -> best_val_acc=0.9346 at ep33 (710.1s)
+[2026-10-31 05:22:41] tune scratch_p0.10_s100_lr0.1_wd0.0001
+[2026-10-31 05:34:31]   -> best_val_acc=0.9334 at ep34 (710.3s)
+[2026-10-31 05:34:31] tune scratch_p0.10_s100_lr0.1_wd0.0005
+[2026-10-31 05:46:21]   -> best_val_acc=0.9426 at ep40 (710.0s)
+[2026-10-31 05:46:21] tune scratch_p0.10_s100_lr0.2_wd0.0001
+[2026-10-31 05:58:12]   -> best_val_acc=0.9354 at ep39 (710.3s)
+[2026-10-31 05:58:12] tune scratch_p0.10_s100_lr0.2_wd0.0005
+[2026-10-31 06:10:02]   -> best_val_acc=0.9440 at ep38 (710.4s)
+[2026-10-31 06:10:02] === stage tune end
+[2026-10-31 06:10:05] === stage select start
+[2026-10-31 06:10:05] select lp: best lr=0.01 is at the grid edge -> also try lr=0.03
+[2026-10-31 06:11:52]   lp_p0.10_s100_lr0.03_wd0.0001 -> best_val_acc=0.8800 at ep8 (106.5s)
+[2026-10-31 06:13:36]   lp_p0.10_s100_lr0.03_wd0.0005 -> best_val_acc=0.8802 at ep8 (104.0s)
+[2026-10-31 06:13:36] select lp: best lr=0.03 is at the grid edge -> also try lr=0.1
+[2026-10-31 06:15:20]   lp_p0.10_s100_lr0.1_wd0.0001 -> best_val_acc=0.8810 at ep15 (104.0s)
+[2026-10-31 06:17:05]   lp_p0.10_s100_lr0.1_wd0.0005 -> best_val_acc=0.8820 at ep15 (104.0s)
+[2026-10-31 06:17:05] select lp: lr=0.1 wd=0.0005 val=0.8820 (of 10 configs)
+[2026-10-31 06:17:05] select ft: best lr=0.03 is at the grid edge -> also try lr=0.1
+[2026-10-31 06:20:03]   ft_p0.10_s100_lr0.1_wd0.0001 -> best_val_acc=0.9614 at ep10 (178.6s)
+[2026-10-31 06:23:01]   ft_p0.10_s100_lr0.1_wd0.0005 -> best_val_acc=0.9574 at ep10 (177.5s)
+[2026-10-31 06:23:01] select ft: lr=0.03 wd=0.0005 val=0.9678 (of 8 configs)
+[2026-10-31 06:23:01] select scratch: best lr=0.2 is at the grid edge -> also try lr=0.4
+[2026-10-31 06:34:51]   scratch_p0.10_s100_lr0.4_wd0.0001 -> best_val_acc=0.9372 at ep39 (709.7s)
+[2026-10-31 06:46:40]   scratch_p0.10_s100_lr0.4_wd0.0005 -> best_val_acc=0.9434 at ep37 (709.5s)
+[2026-10-31 06:46:40] select scratch: lr=0.2 wd=0.0005 val=0.9440 (of 8 configs)
+[2026-10-31 06:46:40] === stage select end
+[2026-10-31 06:46:44] === stage final start
+[2026-10-31 06:46:44] final train lp_p0.10_s0 (lr=0.1 wd=0.0005 ep=15)
+[2026-10-31 06:48:30]   trained: best_val_acc=0.8798 ep14 (106.5s); eval
+[2026-10-31 06:50:24]   ig
+[2026-10-31 06:52:41] final train lp_p0.10_s1 (lr=0.1 wd=0.0005 ep=15)
+[2026-10-31 06:54:25]   trained: best_val_acc=0.8810 ep12 (104.2s); eval
+[2026-10-31 06:56:07]   ig
+[2026-10-31 06:58:22] final train lp_p0.10_s2 (lr=0.1 wd=0.0005 ep=15)
+[2026-10-31 07:00:06]   trained: best_val_acc=0.8808 ep13 (104.2s); eval
+[2026-10-31 07:01:48]   ig
+[2026-10-31 07:04:03] final train lp_p0.99_s0 (lr=0.1 wd=0.0005 ep=15)
+[2026-10-31 07:05:47]   trained: best_val_acc=0.9588 ep13 (104.2s); eval
+[2026-10-31 07:07:29]   ig
+[2026-10-31 07:09:44] final train lp_p0.99_s1 (lr=0.1 wd=0.0005 ep=15)
+[2026-10-31 07:11:28]   trained: best_val_acc=0.9590 ep13 (104.1s); eval
+[2026-10-31 07:13:09]   ig
+[2026-10-31 07:15:24] final train lp_p0.99_s2 (lr=0.1 wd=0.0005 ep=15)
+[2026-10-31 07:17:08]   trained: best_val_acc=0.9600 ep13 (104.1s); eval
+[2026-10-31 07:18:50]   ig
+[2026-10-31 07:21:05] final train lp_p0.90_s0 (lr=0.1 wd=0.0005 ep=15)
+[2026-10-31 07:22:49]   trained: best_val_acc=0.9410 ep14 (103.8s); eval
+[2026-10-31 07:24:30]   ig
+[2026-10-31 07:26:44] final train lp_p0.90_s1 (lr=0.1 wd=0.0005 ep=15)
+[2026-10-31 07:28:28]   trained: best_val_acc=0.9396 ep12 (103.8s); eval
+[2026-10-31 07:30:09]   ig
+[2026-10-31 07:32:23] final train lp_p0.90_s2 (lr=0.1 wd=0.0005 ep=15)
+[2026-10-31 07:34:07]   trained: best_val_acc=0.9404 ep13 (103.8s); eval
+[2026-10-31 07:35:48]   ig
+[2026-10-31 07:38:02] final train ft_p0.10_s0 (lr=0.03 wd=0.0005 ep=10)
+[2026-10-31 07:41:01]   trained: best_val_acc=0.9654 ep8 (178.0s); eval
+[2026-10-31 07:42:42]   ig
+[2026-10-31 07:44:56] final train ft_p0.10_s1 (lr=0.03 wd=0.0005 ep=10)
+[2026-10-31 07:47:53]   trained: best_val_acc=0.9698 ep9 (176.9s); eval
+[2026-10-31 07:49:34]   ig
+[2026-10-31 07:51:49] final train ft_p0.10_s2 (lr=0.03 wd=0.0005 ep=10)
+[2026-10-31 07:54:46]   trained: best_val_acc=0.9636 ep8 (176.9s); eval
+[2026-10-31 07:56:27]   ig
+[2026-10-31 07:58:41] final train ft_p0.99_s0 (lr=0.03 wd=0.0005 ep=10)
+[2026-10-31 08:01:38]   trained: best_val_acc=0.9976 ep10 (176.9s); eval
+[2026-10-31 08:03:19]   ig
+[2026-10-31 08:05:34] final train ft_p0.99_s1 (lr=0.03 wd=0.0005 ep=10)
+[2026-10-31 08:08:30]   trained: best_val_acc=0.9954 ep6 (176.8s); eval
+[2026-10-31 08:10:11]   ig
+[2026-10-31 08:12:26] final train ft_p0.99_s2 (lr=0.03 wd=0.0005 ep=10)
+[2026-10-31 08:15:23]   trained: best_val_acc=0.9972 ep6 (176.7s); eval
+[2026-10-31 08:17:04]   ig
+[2026-10-31 08:19:18] final train ft_p0.90_s0 (lr=0.03 wd=0.0005 ep=10)
+[2026-10-31 08:22:18]   trained: best_val_acc=0.9874 ep8 (179.6s); eval
+[2026-10-31 08:24:00]   ig
+[2026-10-31 08:26:15] final train ft_p0.90_s1 (lr=0.03 wd=0.0005 ep=10)
+[2026-10-31 08:29:14]   trained: best_val_acc=0.9884 ep8 (178.5s); eval
+[2026-10-31 08:30:56]   ig
+[2026-10-31 08:33:12] final train ft_p0.90_s2 (lr=0.03 wd=0.0005 ep=10)
+[2026-10-31 08:36:11]   trained: best_val_acc=0.9854 ep10 (178.4s); eval
+[2026-10-31 08:37:52]   ig
+[2026-10-31 08:40:08] final train scratch_p0.10_s0 (lr=0.2 wd=0.0005 ep=40)
+[2026-10-31 08:51:59]   trained: best_val_acc=0.9448 ep35 (711.1s); eval
+[2026-10-31 08:53:41]   ig
+[2026-10-31 08:55:56] final train scratch_p0.10_s1 (lr=0.2 wd=0.0005 ep=40)
+[2026-10-31 09:07:47]   trained: best_val_acc=0.9438 ep40 (710.5s); eval
+[2026-10-31 09:09:29]   ig
+[2026-10-31 09:11:44] final train scratch_p0.10_s2 (lr=0.2 wd=0.0005 ep=40)
+[2026-10-31 09:23:34]   trained: best_val_acc=0.9470 ep40 (710.5s); eval
+[2026-10-31 09:25:16]   ig
+[2026-10-31 09:27:31] final train scratch_p0.99_s0 (lr=0.2 wd=0.0005 ep=40)
+[2026-10-31 09:39:21]   trained: best_val_acc=0.9940 ep33 (709.7s); eval
+[2026-10-31 09:41:03]   ig
+[2026-10-31 09:43:18] final train scratch_p0.99_s1 (lr=0.2 wd=0.0005 ep=40)
+[2026-10-31 09:55:07]   trained: best_val_acc=0.9918 ep34 (709.6s); eval
+[2026-10-31 09:56:49]   ig
+[2026-10-31 09:59:04] final train scratch_p0.99_s2 (lr=0.2 wd=0.0005 ep=40)
+[2026-10-31 10:10:52]   trained: best_val_acc=0.9928 ep38 (708.4s); eval
+[2026-10-31 10:12:33]   ig
+[2026-10-31 10:14:48] final train scratch_p0.90_s0 (lr=0.2 wd=0.0005 ep=40)
+[2026-10-31 10:26:36]   trained: best_val_acc=0.9764 ep40 (708.5s); eval
+[2026-10-31 10:28:18]   ig
+[2026-10-31 10:30:33] final train scratch_p0.90_s1 (lr=0.2 wd=0.0005 ep=40)
+[2026-10-31 10:42:24]   trained: best_val_acc=0.9758 ep40 (711.0s); eval
+[2026-10-31 10:44:06]   ig
+[2026-10-31 10:46:21] final train scratch_p0.90_s2 (lr=0.2 wd=0.0005 ep=40)
+[2026-10-31 10:58:12]   trained: best_val_acc=0.9752 ep33 (710.4s); eval
+[2026-10-31 10:59:53]   ig
+[2026-10-31 11:02:08] precision check (TF32 vs IEEE IG) lp_p0.10_s0
+[2026-10-31 11:02:36] precision check (TF32 vs IEEE IG) lp_p0.99_s0
+[2026-10-31 11:02:55] precision check (TF32 vs IEEE IG) ft_p0.10_s0
+[2026-10-31 11:03:14] precision check (TF32 vs IEEE IG) ft_p0.99_s0
+[2026-10-31 11:03:33] precision check (TF32 vs IEEE IG) scratch_p0.10_s0
+[2026-10-31 11:03:52] precision check (TF32 vs IEEE IG) scratch_p0.99_s0
+[2026-10-31 11:04:12] === stage final end
+[2026-11-02 19:08:45] === stage lplong start
+[2026-11-02 19:08:46] lplong train lp_p0.99_s0 (lr=0.1 wd=0.0 ep=60)
+[2026-11-02 19:15:54]   trained: best_val_acc=0.9662 ep57 (428.2s); eval
+[2026-11-02 19:17:50] lplong train lp_p0.99_s1 (lr=0.1 wd=0.0 ep=60)
+[2026-11-02 19:24:54]   trained: best_val_acc=0.9658 ep54 (423.8s); eval
+[2026-11-02 19:26:39] lplong train lp_p0.99_s2 (lr=0.1 wd=0.0 ep=60)
+[2026-11-02 19:33:48]   trained: best_val_acc=0.9644 ep59 (428.4s); eval
+[2026-11-02 19:35:32] === stage lplong end
